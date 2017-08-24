@@ -1,0 +1,129 @@
+body, td, input { font-family: 'Roboto Condensed', sans-serif; font-size: 13pt; }
+body { color: #333; }
+
+h1 { font-size: 40pt; font-weight: 300; }
+h2 { font-size: 30pt; font-weight: 300; }
+h3 { font-size: 24pt; font-weight: 300; }
+h4 { font-size: 18pt; font-weight: 300; }
+
+.text-xxl { font-size: 62pt; font-weight: 300; text-transform: uppercase; }
+.text-xl { font-size: 40pt; font-weight: 300; text-transform: uppercase; }
+.text-l { font-size: 26pt; font-weight: 300; text-transform: uppercase; }
+.text-shadow { text-shadow: 2px 2px 4px #000; }
+.text-shadow-lg { text-shadow: 0 0 20px rgba(0,0,0,0.5); }
+.box-shadow { box-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+
+.body {}
+.main-container { position: relative; margin: 0 auto; background: #fff; }
+
+header { min-height: 400px; background: #4b4539 url('../img/header-bg-2.jpg') center center no-repeat; color: #fff; }
+.header-top { background:rgba(0,0,0,0.4); padding: 20px 0; font-weight: 300; }
+.brand { font-size: 50pt; font-style: italic; text-align: center; margin: 50px 0 0 0; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); }
+.logo { text-align: center; }
+.logo img { margin: 30px 0 0 0; }
+.slogan-line { text-align: center; }
+.slogan { font-weight: 300; text-transform: uppercase; text-align: center; width: 80%; padding: 20px 0 0 0; margin: 0 auto; }
+.slogan-side { font-style: italic; font-size: 15pt; text-align: center; margin: 130px 0 0 0;  }
+
+nav { text-align: center; background: #333; margin: -52px 0 0 0; }
+nav ul { *zoom:1; list-style: none; padding: 0; margin: 0; font-size: 12pt; display: inline-block; }
+nav ul:before, nav ul:after { content:""; display:table; }
+nav ul:after { clear:both; }
+nav ul > li { display: inline-block; position:relative; margin: 0 10px; }
+nav a { color: #fff; text-transform: uppercase; display: block; padding: 15px 5px; }
+nav li:hover > a { text-decoration:none; background:#fff; color: #333; }
+nav li ul { background:#273754; }
+nav li ul li { width:200px; text-align: left; margin: 0; font-size: 12pt; }
+nav li ul a { border:none; padding: 5px 10px; }
+nav li ul a:hover { background:rgba(0,0,0,0.2); color: #fff; }
+nav li ul { position:absolute; left:0; top:34px; z-index:1; visibility:hidden; opacity:0; filter:alpha(opacity=0); transition:200ms ease; }
+nav ul > li:hover ul { visibility:visible; opacity:1; filter:alpha(opacity=100); }
+
+.logo-small { display: none; margin: 0 50px 0 0; }
+nav.fixed .brand-name { color: #eee; font-style: italic; font-size: 14pt; }
+nav.fixed .brand-location { font-size: 12pt; border-top: 1px solid #777; }
+
+nav.fixed { z-index: 9999; position: fixed; left: 0; top: 0; margin: 0; padding: 0 0 10px 0; width: 100%; background: #333; box-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+nav.fixed .logo-small { display: inline-block; }
+nav.fixed > ul { display: inline-block; position: relative; margin: 0; background: none; }
+nav.fixed a { color: #fff; }
+nav.fixed li ul a { color: #fff; }
+#fixed-padding { height: 67px; }
+
+.content { min-height: 500px; }
+
+#section-first { background: #f9fafb; }
+.greetings-title { font-weight: 300; text-align: center; font-size: 20pt; margin: 40px 0 10px 0; }
+.greetings-line { height: 1px; font-size: 0.01%; border-bottom: 3px solid #ddd; max-width: 200px; margin: 0 auto; }
+.greetings-text { text-align: center; font-size: 12pt; margin: 20px auto 50px auto; max-width: 600px; font-weight: 300; }
+
+.about-block { text-align: center; }
+.about-block .img { padding: 0 30px; margin: 0 auto; }
+.about-block p { font-size: 11pt; text-align: center; }
+.text-title { text-align: center; font-size: 17pt; font-weight: 300; margin: 20px 0; }
+.about-text { height: 200px; max-width: 400px; margin: 0 auto; }
+.beauty-title { font-weight: 300; max-width: 500px; font-size: 30pt; margin: 0 auto; text-align: center; background: left center no-repeat url('../img/title-left.png'), right center no-repeat url('../img/title-right.png'); }
+#products { background: #eadfc9 radial-gradient(circle at center, #f3f0e1 30%, #eadfc9 70%); }
+.product-name { font-size: 30pt; color: #8c151a; }
+
+footer { background: #333; padding: 20px 0; color: #fff; }
+.alcohol-note { margin: 70px 0; }
+
+[data-slides] {
+    background-image: url('../img/header-bg-1.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.slider-controls { text-align: center; margin: 15px 0 0 0; }
+.slider-controls span { display: inline-block; cursor: pointer; margin: 0 5px; background: #fff; border: 1px solid #bbb; height: 10px; width: 10px; border-radius: 50%; box-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+
+.icon-bar { border-color: #fff; border-width: 1px; border-style: solid; }
+
+nav.fixed { z-index: 999; }
+.navbar-header { background: #333; }
+
+/* -------------------- Responsive classes ------------------- */
+
+/* Extra small devices - less than 768 */
+@media (max-width: 767px) {
+    .text-xxl { font-size: 30pt; }
+    .text-xl { font-size: 30pt; }
+    .text-l { font-size: 20pt; }
+
+    .header-top { padding: 10px 0; }
+    .slogan-side { margin: 15px 0 15px 0; }
+    .brand { margin: 10px 0 0 0; }
+    .slogan-line { text-align: center; }
+    .slogan { font-weight: 300; text-transform: uppercase; text-align: center; width: 80%; padding: 20px 0 0 0; margin: 0 auto; }
+    .about-block .img img { display: inline-block !important; }
+    .beauty-title { max-width: 400px; font-size: 20pt; }
+
+    header { min-height: auto; }
+    header nav { margin-top: 10px; margin-bottom: 20px; }
+    header .phone-number { font-size: 16pt; margin-right: 10%; margin-left: 10%; }
+
+    #about-us { padding: 50px 0; }
+
+    .navbar-collapse.in { overflow-y: inherit; }
+    nav { text-align: center; margin-top:0; margin-bottom: 20px; }
+    nav ul { display: block; }
+    nav ul > li { display: block; position:relative; margin: 0 10px; background: rgba(0,0,0,0.3); border-bottom: 1px solid #aaa; }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .text-xxl { font-size: 50pt; }
+    .text-xl { font-size: 30pt; }
+    .text-l { font-size: 20pt; }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .text-xxl { font-size: 55pt; }
+    .text-xl { font-size: 34pt; }
+    .text-l { font-size: 22pt; }
+}
