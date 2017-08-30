@@ -101,7 +101,7 @@ nav.fixed { z-index: 999; }
     .logo img { margin: 10px 0 10px 0; }
     .logo-text { margin: 10px 0 0 0; text-align: center; }
     .header-top { padding: 10px 0; }
-    .slogan-side { margin: 15px 0 15px 0; }
+    .slogan-side { margin: 15px 0 0 0; }
     .brand { margin: 10px 0 0 0; }
     .slogan-line { text-align: center; }
     .slogan { font-weight: 300; text-transform: uppercase; text-align: center; width: 80%; padding: 20px 0 0 0; margin: 0 auto; }
