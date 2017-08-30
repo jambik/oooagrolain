@@ -30,7 +30,7 @@ header { min-height: 400px; background: #4b4539 url('../img/header-bg-2.jpg') ce
 .carousel-caption { bottom: 60px; background:rgba(0,0,0,0.4); }
 .carousel-indicators { bottom: 60px; }
 
-nav { text-align: center; background: #333; margin: -52px 0 0 0; position: relative; z-index: 9999; }
+nav { text-align: center; background: #333; margin: -52px 0 0 0; position: relative; z-index: 5; }
 nav ul { *zoom:1; list-style: none; padding: 0; margin: 0; font-size: 12pt; display: inline-block; }
 nav ul:before, nav ul:after { content:""; display:table; }
 nav ul:after { clear:both; }
