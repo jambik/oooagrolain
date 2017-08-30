@@ -47,21 +47,7 @@
         </div>
     </section>
 
-    <header data-slides='["{{ asset('img/header-bg-1.jpg') }}","{{ asset('img/header-bg-2.jpg') }}","{{ asset('img/header-bg-3.jpg') }}"]'>
-        <div id="fixed-padding" style="display: none;"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3"><div class="slogan-side text-shadow">Дербент</div></div>
-                <div class="col-sm-6">
-
-                </div>
-                <div class="col-sm-3"><div class="slogan-side text-shadow">300 солнечных дней в году</div></div>
-            </div>
-            <div class="row">
-                <div class="slider-controls"></div>
-            </div>
-        </div>
-    </header>
+    @yield('slides')
 
     <section id="menu">
         <div class="navbar-header">
@@ -82,7 +68,7 @@
                 <ul>
                     <li><a href="/">Главная</a></li>
                     <li><a href="/page/about">О нас</a></li>
-                    <li><a href="/page/wines">Карта вин</a></li>
+                    <li><a href="/catalog">Карта вин</a></li>
                     <li><a href="/galleries">Фотогалерея</a></li>
                     <li><a href="/page/partners">Партнерам</a></li>
                     <li><a href="/page/contacts">Контакты</a></li>

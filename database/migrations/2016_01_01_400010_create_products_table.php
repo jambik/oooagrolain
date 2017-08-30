@@ -17,10 +17,10 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->decimal('price')->default(0);
-            $table->tinyInteger('material')->default(0);
-            $table->text('brief');
-            $table->mediumText('text');
-            $table->boolean('available')->default(true);
+            $table->text('brief')->default('');
+            $table->mediumText('text')->default('');
+            $table->string('volume')->default('');
+            $table->string('strength')->default('');
             $table->string('image')->default('');
             $table->integer('category_id')->unsigned()->nullable();
             $table->foreign('category_id')->references('id')->on('categories');

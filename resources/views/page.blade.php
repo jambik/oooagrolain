@@ -4,6 +4,10 @@
 @section('keywords', $page->header ? $page->header->keywords : '')
 @section('description', $page->header ? $page->header->description : '')
 
+@section('slides')
+    @include('partials._slides')
+@endsection
+
 @section('content')
     <div class="container content">
         @include('partials._status')

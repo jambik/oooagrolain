@@ -11,10 +11,10 @@
     </div>
 @endif
 
-<div class="form-group">
+{{--<div class="form-group">
     {!! Form::label('price', 'Цена') !!}
     {!! Form::text('price', null, ['class' => 'form-control']) !!}
-</div>
+</div>--}}
 
 <div class="form-group">
     {!! Form::label('category_id', 'Категория') !!}
@@ -22,27 +22,24 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('material', 'Материал') !!}
-    <select name="material" id="material" class="form-control">
-        <option value="0">- Выберите материал -</option>
-        @foreach (trans('vars.material') as $key => $val)<option value="{{ $key }}"{{ isset($item) && $item->material == $key ? ' selected' : '' }}>{{ $val }}</option>@endforeach
-    </select>
-</div>
-
-<div class="form-group input-checkbox">
-    {!! Form::checkbox('available', 1, null, ['id' => 'available']) !!}
-    {!! Form::label('available', 'Доступность') !!}
-</div>
-
-<div class="form-group">
-    {!! Form::label('brief', 'Краткое описание продукта') !!}
+    {!! Form::label('brief', 'Описание продукта') !!}
     {!! Form::textarea('brief', null, ['rows' => 5, 'class' => 'form-control']) !!}
 </div>
 
-<div class="form-group input-html">
+<div class="form-group">
+    {!! Form::label('volume', 'Объем') !!}
+    {!! Form::text('volume', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('strength', 'Крепость') !!}
+    {!! Form::text('strength', null, ['class' => 'form-control']) !!}
+</div>
+
+{{--<div class="form-group input-html">
     {!! Form::label('text', 'Полное описание продукта') !!}
     {!! Form::textarea('text', null, ['class' => 'form-control']) !!}
-</div>
+</div>--}}
 
 @include('admin.partials._imageable')
 

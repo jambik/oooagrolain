@@ -18,9 +18,9 @@ class Product extends Model
 
     protected $table = 'products';
 
-    protected $fillable = ['name', 'slug', 'category_id', 'price', 'material', 'brief', 'text', 'available', 'image'];
+    protected $fillable = ['name', 'slug', 'category_id', 'price', 'brief', 'text', 'volume', 'strength', 'image'];
 
-    protected static $logAttributes = ['name', 'slug', 'category_id', 'price', 'material', 'brief', 'text', 'available', 'image'];
+    protected static $logAttributes = ['name', 'slug', 'category_id', 'price', 'brief', 'text', 'volume', 'strength', 'image'];
 
     protected $casts = [
         'price' => 'integer',

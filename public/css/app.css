@@ -26,7 +26,11 @@ header { min-height: 400px; background: #4b4539 url('../img/header-bg-2.jpg') ce
 .slogan { font-weight: 300; text-transform: uppercase; text-align: center; width: 80%; padding: 20px 0 0 0; margin: 0 auto; }
 .slogan-side { font-style: italic; font-size: 15pt; text-align: center; margin: 160px 0 0 0;  }
 
-nav { text-align: center; background: #333; margin: -52px 0 0 0; }
+.carousel-inner img { min-height: 200px; }
+.carousel-caption { bottom: 60px; background:rgba(0,0,0,0.4); }
+.carousel-indicators { bottom: 60px; }
+
+nav { text-align: center; background: #333; margin: -52px 0 0 0; position: relative; z-index: 9999; }
 nav ul { *zoom:1; list-style: none; padding: 0; margin: 0; font-size: 12pt; display: inline-block; }
 nav ul:before, nav ul:after { content:""; display:table; }
 nav ul:after { clear:both; }
@@ -52,9 +56,9 @@ nav.fixed li ul a { color: #fff; }
 #fixed-padding { height: 67px; }
 
 .content { min-height: 400px; padding: 0 0 100px 0; }
-.product-item { border: 1px solid #eee; padding: 15px; text-align: center; min-height: 500px; }
-.products .product-name { font-size: 20pt; font-weight: 300; margin: 0 0 15px 0; text-align: center; color: #8c151a; }
-.products .product-description { font-size: 12pt; font-weight: 300; margin: 0 0 15px 0; line-height: 1.3; }
+.product-tile { border: 1px solid #eee; padding: 15px; text-align: center; min-height: 500px; }
+.product-tile .product-name { font-size: 20pt; font-weight: 300; margin: 0 0 15px 0; text-align: center; color: #8c151a; }
+.product-tile .product-description { font-size: 12pt; font-weight: 300; margin: 0 0 15px 0; line-height: 1.3; }
 
 #section-first { background: #f9fafb; }
 .greetings-title { font-weight: 300; text-align: center; font-size: 20pt; margin: 40px 0 10px 0; }
@@ -107,6 +111,9 @@ nav.fixed { z-index: 999; }
     .slogan { font-weight: 300; text-transform: uppercase; text-align: center; width: 80%; padding: 20px 0 0 0; margin: 0 auto; }
     .about-block .img img { display: inline-block !important; }
     .beauty-title { max-width: 400px; font-size: 14pt; }
+
+    .carousel-caption { bottom: 10px; padding-top: 0; }
+    .carousel-indicators { bottom: 10px; }
 
     header { min-height: auto; }
     header nav { margin-top: 10px; margin-bottom: 20px; }

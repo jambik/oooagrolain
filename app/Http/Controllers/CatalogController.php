@@ -17,7 +17,9 @@ class CatalogController extends FrontendController
     {
         $page = Page::findBySlug('catalog');
 
-        return view('catalog.index', compact('page'));
+        $products = Product::all();
+
+        return view('catalog.index', compact('page', 'products'));
     }
 
     /**
