@@ -31,26 +31,29 @@
 <body>
 
 <div class="main-container">
-    <header data-slides='["{{ asset('img/header-bg-1.jpg') }}","{{ asset('img/header-bg-2.jpg') }}","{{ asset('img/header-bg-3.jpg') }}"]'>
-        <div id="fixed-padding" style="display: none;"></div>
-        <div class="header-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-6">{{ $settings->description }}</div>
-                    <div class="col-xs-6 text-right">
-                        Телефон: {{ $settings->phone }}
-                    </div>
+    <section id="logo">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="logo-text">{{ $settings->description }}</div>
+                </div>
+                <div class="col-sm-4 logo text-center">
+                    <img src="{{ asset('img/logo.png') }}">
+                </div>
+                <div class="col-sm-4 text-right">
+                    <div class="logo-text">Телефон: {{ $settings->phone }}</div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <header data-slides='["{{ asset('img/header-bg-1.jpg') }}","{{ asset('img/header-bg-2.jpg') }}","{{ asset('img/header-bg-3.jpg') }}"]'>
+        <div id="fixed-padding" style="display: none;"></div>
         <div class="container">
             <div class="row">
                 <div class="col-sm-3"><div class="slogan-side text-shadow">Дербент</div></div>
-                <div class="col-sm-6 logo">
-                    <img src="{{ asset('img/logo.png') }}">
-                    {{--<div class="brand">Агролайн</div>
-                    <div class="slogan-line"><img src="{{ asset('img/vintage-line.png') }}"></div>
-                    <div class="slogan">Лучшие вина Кавказа</div>--}}
+                <div class="col-sm-6">
+
                 </div>
                 <div class="col-sm-3"><div class="slogan-side text-shadow">300 солнечных дней в году</div></div>
             </div>
