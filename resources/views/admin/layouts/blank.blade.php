@@ -30,7 +30,7 @@
         }
     </style>
 
-    <title>@yield('title', 'Администрирование - Ликойл')</title>
+    <title>@yield('title', 'Администрирование - ООО «Агролайн»')</title>
 </head>
 <body>
 <div id="app">

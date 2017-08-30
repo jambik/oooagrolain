@@ -22,7 +22,7 @@
 
     @yield('head_scripts')
 
-    <title>@yield('title', 'Администрирование')</title>
+    <title>@yield('title', 'Администрирование - ООО «Агролайн»')</title>
 </head>
 <body>
 <div id="app">
@@ -39,7 +39,7 @@
                 </button>
                 <a class="navbar-brand" href="{{ route('admin') }}">
                     <img src="{{ asset('img/logo.png') }}" style="height: 35px;">
-                    <a class="navbar-brand" href="#" style="line-height: 35px; padding-left: 20px;">Laravel CMS</a>
+                    <a class="navbar-brand" href="#" style="line-height: 35px; padding-left: 20px;">ООО «Агролайн»</a>
                 </a>
             </div>
 
