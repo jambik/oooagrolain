@@ -38,7 +38,7 @@
                     <div class="logo-text">{{ $settings->description }}</div>
                 </div>
                 <div class="col-sm-4 logo text-center">
-                    <img src="{{ asset('img/logo.png') }}">
+                    <a href="{{ route('index') }}"><img src="{{ asset('img/logo.png') }}"></a>
                 </div>
                 <div class="col-sm-4 text-right">
                     <div class="logo-text">Телефон: {{ $settings->phone }}</div>
