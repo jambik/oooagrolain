@@ -76,7 +76,7 @@ class CategoriesController extends BackendController
      */
     public function show($id, Request $request)
     {
-        $item = $this->model->findOrFail($id);
+        $item = $this->model->with('header')->findOrFail($id);
 
         if ($request->ajax()){
             return response()->json($item);
@@ -114,7 +114,7 @@ class CategoriesController extends BackendController
 
         $item->update($request->all());
 
-        $item = $this->model->findOrFail($id);
+        $item = $this->model->with('header')->findOrFail($id);
 
         if($request->ajax()) {
             return response()->json($item);

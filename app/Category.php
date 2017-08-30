@@ -13,7 +13,9 @@ use Spatie\Activitylog\Traits\LogsActivity;
 
 class Category extends Model
 {
-    use NodeTrait, ImageableTrait, ResourceableTrait, HeaderableTrait, LogsActivity;
+    use NodeTrait, Sluggable, SluggableScopeHelpers, ImageableTrait, ResourceableTrait, HeaderableTrait, LogsActivity {
+        NodeTrait::replicate insteadof Sluggable;
+    }
 
     protected $table = 'categories';
 

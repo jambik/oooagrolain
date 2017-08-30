@@ -88,7 +88,7 @@ __webpack_require__(2);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('app-component', __webpack_require__(5));
+Vue.component('app-categories', __webpack_require__(5));
 
 var app = new Vue({
     el: '#app',
@@ -10279,9 +10279,9 @@ var Component = __webpack_require__(6)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\oooagrolain\\resources\\assets\\js\\components\\Component.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\oooagrolain\\resources\\assets\\js\\components\\Categories.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Component.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] Categories.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -10290,9 +10290,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-10965639", Component.options)
+    hotAPI.createRecord("data-v-3de43be0", Component.options)
   } else {
-    hotAPI.reload("data-v-10965639", Component.options)
+    hotAPI.reload("data-v-3de43be0", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -10409,15 +10409,352 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
-        return {};
+        return {
+            baseUrl: '/admin/categories',
+            nodeFormId: '#form-categories',
+            treeId: '#jstree_categories',
+            node: false,
+            nodeLoading: false,
+            sendingForm: false,
+            deletingNode: false,
+            deletingImage: false
+        };
     },
     created: function created() {},
-    mounted: function mounted() {},
+    mounted: function mounted() {
+        var that = this;
 
-    methods: {}
+        $('#about').summernote({
+            height: 200,
+            lang: 'ru-RU'
+        });
+
+        // Инициализируем дерево
+        $(that.treeId).jstree({
+            'core': {
+                'data': {
+                    'url': function url() {
+                        return that.baseUrl;
+                    },
+                    'data': function data(node) {
+                        return { 'id': node.id };
+                    }
+                },
+                'check_callback': true
+            },
+            'types': {
+                'default': {
+                    'icon': '/img/category.png'
+                }
+            },
+            'plugins': ['dnd', 'types', 'wholerow']
+        }).on('select_node.jstree', function (node, selected, e) {
+            if (selected.node.original.id == -1) {
+                $(that.nodeFormId).attr('action', that.baseUrl);
+                that.node = selected.node.original;
+                that.nodeLoading = false;
+                $('#about').summernote('code', '');
+            } else {
+                that.resetNodeForm();
+                $(that.nodeFormId).attr('action', that.baseUrl + '/' + selected.node.original.id);
+                $.get(that.baseUrl + '/' + selected.node.original.id, function (data) {
+                    that.node = data;
+                    $('#about').summernote('code', that.node.about);
+                }).fail(function () {
+                    sweetAlert("", "Ошибка при запросе к серсеру", 'error');
+                }).always(function () {
+                    that.nodeLoading = false;
+                });
+            }
+        }).on('move_node.jstree', function (e, node) {
+            var params = {
+                'id': node.node.id,
+                'parent': node.parent != '#' ? node.parent : '',
+                'position': node.position,
+                'old_parent': node.old_parent != '#' ? node.old_parent : '',
+                'old_position': node.old_position
+            };
+
+            $.post(that.baseUrl + '/move', params, function (data) {}).fail(function () {
+                sweetAlert("", "Ошибка при запросе к серсеру", 'error');
+            }).always(function () {});
+        });
+
+        $(that.nodeFormId).on('submit', function (e) {
+            that.ajaxFormSubmit(e, that.nodeSaved);
+        });
+    },
+
+    methods: {
+        newNode: function newNode(selectedNode) {
+            var node = {};
+            node.id = -1;
+            node.text = 'Категория';
+            node.name = 'Категория';
+            node.parent_id = selectedNode == '#' ? '' : selectedNode;
+
+            return node;
+        },
+        addNode: function addNode() {
+            var that = this;
+
+            var newNode = $(that.treeId).jstree().get_node(-1);
+            if (newNode) {
+                return;
+            }
+
+            var selectedNode = $(that.treeId).jstree().get_selected();
+            selectedNode = selectedNode.length ? selectedNode[0] : '#';
+
+            that.resetNodeForm();
+            var newNode = that.newNode(selectedNode);
+            $(that.treeId).jstree().create_node(selectedNode, newNode);
+            if (selectedNode != '#') {
+                $(that.treeId).jstree().open_node(selectedNode);
+                $(that.treeId).jstree().deselect_node(selectedNode);
+            }
+            $(that.treeId).jstree().select_node(-1);
+        },
+        deleteNode: function deleteNode() {
+            var that = this;
+
+            sweetAlert({
+                title: "Удаление категории",
+                text: "Вы уверены что хотите удалить категорию?",
+                type: "info",
+                confirmButtonColor: "#F44336",
+                confirmButtonText: "Удалить",
+                cancelButtonText: "Отмена",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                showLoaderOnConfirm: true
+            }, function () {
+                var selectedNode = $(that.treeId).jstree().get_selected();
+                selectedNode = selectedNode[0];
+                that.node = false;
+
+                if (selectedNode == -1) {
+                    $(that.treeId).jstree().delete_node(-1);
+                    sweetAlert.close();
+                } else {
+                    that.deletingNode = true;
+                    $.post(that.baseUrl + '/' + selectedNode, { '_method': 'DELETE' }, function (data) {
+                        $(that.treeId).jstree().delete_node(selectedNode);
+                        sweetAlert.close();
+                    }).fail(function () {
+                        sweetAlert("", "Ошибка при запросе к серсеру", 'error');
+                    }).always(function () {
+                        that.deletingNode = false;
+                    });
+                }
+            });
+        },
+        deleteImg: function deleteImg() {
+            var isHeader = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+            var that = this;
+
+            if (isHeader) {
+                that.node.header.image = '';
+            } else {
+                that.node.image = '';
+            }
+        },
+        resetNodeForm: function resetNodeForm() {
+            var that = this;
+
+            that.node = false;
+            that.nodeLoading = true;
+            $(that.nodeFormId + ' #image').val('');
+            $(that.nodeFormId + ' #image-path').val('');
+            var newNode = $(that.treeId).jstree().get_node(-1);
+            if (newNode) {
+                $(that.treeId).jstree().delete_node(-1);
+            }
+        },
+        nodeSaved: function nodeSaved(data) {
+            var that = this;
+
+            var newNode = $(that.treeId).jstree().get_node(-1);
+            if (newNode) {
+                $(that.treeId).jstree().create_node(newNode.parent, data, 'last');
+                $(that.treeId).jstree().delete_node(-1);
+            } else {
+                $(that.treeId).jstree().set_text(data.id, data.name);
+            }
+
+            $(that.nodeFormId + ' #image').val('');
+            $(that.nodeFormId + ' #image-path').val('');
+
+            $(that.nodeFormId + ' #header_image').val('');
+            $(that.nodeFormId + ' #header-image-path').val('');
+
+            that.node = data;
+        },
+        ajaxFormSubmit: function ajaxFormSubmit(e, successFunction) {
+            var that = this;
+
+            if (e) {
+                e.preventDefault();
+            }
+            var form = e ? e.target : $(that.nodeFormId);
+
+            // Место для отображения ошибок в форме
+            var formStatus = $(form).find('.form-status');
+            if (formStatus.length) formStatus.html('');
+
+            // Анимированная кнопка при отправки формы
+            var formButton = $(form).find('.form-button').hide();
+            if (formButton.length) {
+                formButton.hide();
+            }
+            that.sendingForm = true;
+
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: new FormData(form),
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function success(data) {
+                    successFunction(data);
+                },
+                error: function error(jqXHR, textStatus, errorThrown) {
+                    if (formStatus.length && jqXHR.status == 422) // Если статус 422 (неправильные входные данные) то отображаем ошибки
+                        {
+                            var formStatusText = '<div class="card-panel red darken-4 white-text">' + (formStatus.data('errorText') ? formStatus.data('errorText') : '<strong>Ошибка</strong>') + "<ul>";
+
+                            $.each(jqXHR.responseJSON, function (index, value) {
+                                formStatusText += "<li>" + value + "</li>";
+                            });
+
+                            formStatusText += "</ul></div>";
+                            formStatus.html(formStatusText);
+                            $('body').scrollTo(formStatus, 500);
+                        } else {
+                        sweetAlert("", "Ошибка при запросе к серсеру", 'error');
+                    }
+                },
+                complete: function complete(jqXHR, textStatus) {
+                    if (formButton.length) {
+                        formButton.show();
+                    }
+                    that.sendingForm = false;
+                }
+            });
+        }
+    }
 });
 
 /***/ }),
@@ -10425,13 +10762,377 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c("div")
-},staticRenderFns: []}
+  return _c('div', {
+    staticClass: "container-fluid"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-lg-4 col-md-6"
+  }, [_c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-body"
+  }, [_c('button', {
+    staticClass: "btn btn-success",
+    attrs: {
+      "id": "node-add"
+    },
+    on: {
+      "click": function($event) {
+        _vm.addNode()
+      }
+    }
+  }, [_c('i', {
+    staticClass: "material-icons left"
+  }, [_vm._v("add_circle")]), _vm._v(" Добавить")]), _vm._v(" "), _c('button', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.node),
+      expression: "node"
+    }],
+    staticClass: "btn btn-danger",
+    attrs: {
+      "id": "node-delete"
+    },
+    on: {
+      "click": function($event) {
+        _vm.deleteNode()
+      }
+    }
+  }, [_c('i', {
+    staticClass: "material-icons left"
+  }, [_vm._v("cancel")]), _vm._v(" Удалить")])])]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c('div', {
+    staticClass: "col-lg-8 col-md-6"
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.sendingForm),
+      expression: "sendingForm"
+    }],
+    staticClass: "preloader loader"
+  }), _vm._v(" "), _c('form', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.node),
+      expression: "node"
+    }],
+    attrs: {
+      "id": "form-categories",
+      "role": "form",
+      "method": "POST",
+      "action": ""
+    }
+  }, [(_vm.node.id > 0) ? _c('input', {
+    attrs: {
+      "type": "hidden",
+      "name": "_method",
+      "value": "PUT"
+    }
+  }) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "form-status"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.node.parent_id),
+      expression: "node.parent_id"
+    }],
+    attrs: {
+      "type": "hidden",
+      "id": "parent_id",
+      "name": "parent_id"
+    },
+    domProps: {
+      "value": (_vm.node.parent_id)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.node.parent_id = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('label', {
+    attrs: {
+      "for": "parent_name"
+    }
+  }, [_vm._v("Родительская категория")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.node.parent_id),
+      expression: "node.parent_id"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "id": "parent_name",
+      "disabled": "disabled",
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.node.parent_id)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.node.parent_id = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "name"
+    }
+  }, [_vm._v("Название")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.node.name),
+      expression: "node.name"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "id": "name",
+      "name": "name",
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.node.name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.node.name = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), (_vm.node.image) ? _c('div', {
+    staticClass: "center category-image"
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.deletingImage),
+      expression: "! deletingImage"
+    }]
+  }, [_c('div', [_c('img', {
+    attrs: {
+      "src": '/images/small/' + _vm.node.img_url + _vm.node.image
+    }
+  })]), _vm._v(" "), _c('div', [_vm._v(" ")]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-danger",
+    attrs: {
+      "type": "button",
+      "title": "Удалить фото",
+      "onclick": "deleteImage(this)",
+      "data-request-url": "/admin/imageable",
+      "data-model-class": "App\\Category",
+      "data-model-id": _vm.node.id
+    },
+    on: {
+      "click": function($event) {
+        _vm.deleteImg()
+      }
+    }
+  }, [_c('i', {
+    staticClass: "material-icons"
+  }, [_vm._v("delete")])]), _vm._v(" "), _c('div', {
+    staticClass: "preloader loader",
+    staticStyle: {
+      "display": "none"
+    }
+  })])]) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "headerable"
+  }, [_vm._m(3), _vm._v(" "), _c('div', [_vm._v(" ")]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "form-group col-lg-6"
+  }, [_c('label', {
+    attrs: {
+      "for": "header_title"
+    }
+  }, [_vm._v("Title (META)")]), _vm._v(" "), _c('input', {
+    staticClass: "form-control",
+    attrs: {
+      "id": "header_title",
+      "name": "header[title]",
+      "type": "text"
+    },
+    domProps: {
+      "value": _vm.node.header ? _vm.node.header.title : ''
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group col-lg-6"
+  }, [_c('label', {
+    attrs: {
+      "for": "header_keywords"
+    }
+  }, [_vm._v("Keywords (META)")]), _vm._v(" "), _c('input', {
+    staticClass: "form-control",
+    attrs: {
+      "id": "header_keywords",
+      "name": "header[keywords]",
+      "type": "text"
+    },
+    domProps: {
+      "value": _vm.node.header ? _vm.node.header.keywords : ''
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group col-lg-6"
+  }, [_c('label', {
+    attrs: {
+      "for": "header_description"
+    }
+  }, [_vm._v("Description (META)")]), _vm._v(" "), _c('input', {
+    staticClass: "form-control",
+    attrs: {
+      "id": "header_description",
+      "name": "header[description]",
+      "type": "text"
+    },
+    domProps: {
+      "value": _vm.node.header ? _vm.node.header.description : ''
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group col-lg-6"
+  }, [_c('label', {
+    attrs: {
+      "for": "header_caption"
+    }
+  }, [_vm._v("Надпись на странице")]), _vm._v(" "), _c('input', {
+    staticClass: "form-control",
+    attrs: {
+      "id": "header_caption",
+      "name": "header[caption]",
+      "type": "text"
+    },
+    domProps: {
+      "value": _vm.node.header ? _vm.node.header.caption : ''
+    }
+  })])]), _vm._v(" "), _vm._m(4), _vm._v(" "), (_vm.node.header && _vm.node.header.image) ? _c('div', {
+    staticClass: "category-image-header"
+  }, [_c('div', [_c('img', {
+    attrs: {
+      "src": '/images/small/' + _vm.node.header.img_url + _vm.node.header.image
+    }
+  })]), _vm._v(" "), _c('div', [_vm._v(" ")]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-danger",
+    attrs: {
+      "type": "button",
+      "title": "Удалить фото",
+      "onclick": "deleteImage(this);",
+      "data-request-url": "/admin/headerable",
+      "data-model-class": "App\\Category",
+      "data-model-id": _vm.node.id
+    },
+    on: {
+      "click": function($event) {
+        _vm.deleteImg(true)
+      }
+    }
+  }, [_c('i', {
+    staticClass: "material-icons"
+  }, [_vm._v("delete")])]), _vm._v(" "), _c('div', {
+    staticClass: "preloader loader",
+    staticStyle: {
+      "display": "none"
+    }
+  })]) : _vm._e()]), _vm._v(" "), _c('div', {
+    staticClass: "text-center"
+  }, [_vm._m(5), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.sendingForm),
+      expression: "sendingForm"
+    }],
+    staticClass: "preloader loader"
+  })])])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-body"
+  }, [_c('div', {
+    attrs: {
+      "id": "jstree_categories"
+    }
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "about"
+    }
+  }, [_vm._v("Описание")]), _vm._v(" "), _c('textarea', {
+    staticClass: "form-control",
+    attrs: {
+      "name": "about",
+      "id": "about"
+    }
+  })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "image"
+    }
+  }, [_vm._v("Фото")]), _vm._v(" "), _c('input', {
+    staticClass: "filestyle",
+    attrs: {
+      "type": "file",
+      "data-btnClass": "btn-default",
+      "data-text": "Выберите файл",
+      "data-buttonBefore": "true",
+      "name": "image",
+      "id": "image"
+    }
+  })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "title"
+  }, [_c('i', {
+    staticClass: "material-icons"
+  }, [_vm._v("featured_play_list")]), _vm._v(" Настройки Хидера")])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "header_image"
+    }
+  }, [_vm._v("Фото")]), _vm._v(" "), _c('input', {
+    staticClass: "filestyle",
+    attrs: {
+      "type": "file",
+      "data-btnClass": "btn-default",
+      "data-text": "Выберите файл",
+      "data-buttonBefore": "true",
+      "name": "header[image]",
+      "id": "header_image"
+    }
+  })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('button', {
+    staticClass: "btn btn-lg btn-primary",
+    attrs: {
+      "type": "submit"
+    }
+  }, [_c('i', {
+    staticClass: "material-icons left"
+  }, [_vm._v("check_circle")]), _vm._v(" Сохранить")])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-10965639", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-3de43be0", module.exports)
   }
 }
 

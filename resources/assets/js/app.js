@@ -12,7 +12,7 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('app-component', require('./components/Component.vue'));
+Vue.component('app-categories', require('./components/Categories.vue'));
 
 const app = new Vue({
     el: '#app',

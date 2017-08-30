@@ -70,8 +70,8 @@
         <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-4 hidden-print">
                 <ul class="list-group">
-{{--                    <a class="list-group-item" href="{{ route('admin.categories.index') }}"><i class="material-icons left">list</i> Категории</a>--}}
-{{--                    <a class="list-group-item" href="{{ route('admin.products.index') }}"><i class="material-icons left">store</i> Продукты</a>--}}
+                    <a class="list-group-item" href="{{ route('admin.categories.index') }}"><i class="material-icons left">list</i> Категории</a>
+                    <a class="list-group-item" href="{{ route('admin.products.index') }}"><i class="material-icons left">store</i> Продукты</a>
                     <div class="divider"></div>
                     <a class="list-group-item" href="{{ route('admin.pages.index') }}"><i class="material-icons left">content_copy</i> Страницы</a>
                     <a class="list-group-item" href="{{ route('admin.blocks.index') }}"><i class="material-icons left">text_format</i> Текстовые блоки</a>

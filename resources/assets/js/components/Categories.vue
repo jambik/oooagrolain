@@ -39,7 +39,7 @@
 
                     <div class="form-group">
                         <label for="image">Фото</label>
-                        <input type="file" class="filestyle" data-buttonText="Выберите файл" data-buttonBefore="true" name="image" id="image">
+                        <input type="file" class="filestyle" data-btnClass="btn-default" data-text="Выберите файл" data-buttonBefore="true" name="image" id="image">
                     </div>
 
                     <div v-if="node.image" class="center category-image">
@@ -81,7 +81,7 @@
 
                         <div class="form-group">
                             <label for="header_image">Фото</label>
-                            <input type="file" class="filestyle" data-buttonText="Выберите файл" data-buttonBefore="true" name="header[image]" id="header_image">
+                            <input type="file" class="filestyle"  data-btnClass="btn-default" data-text="Выберите файл" data-buttonBefore="true" name="header[image]" id="header_image">
                         </div>
 
                         <div v-if="node.header && node.header.image" class="category-image-header">
@@ -104,18 +104,6 @@
 </template>
 
 <script>
-    import jstree from 'jstree';
-
-    import tooltip from 'bootstrap/js/tooltip';
-    import modal from 'bootstrap/js/modal';
-
-    import codemirror from 'codemirror';
-    import codemirror_css from 'codemirror/lib/codemirror.css';
-
-    import summernote_css from 'summernote/dist/summernote.css';
-    import summernote from 'summernote';
-    import summernote_ru from 'summernote/dist/lang/summernote-ru-RU.min';
-
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

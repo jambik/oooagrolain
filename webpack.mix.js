@@ -66,8 +66,11 @@ mix.combine([
     'bower_components/jquery-ui/jquery-ui.min.js',
 ], 'public/js/admin.bundle.js');
 
-/* Jstree Files */
+/* Jstree package */
 // mix.copy('bower_components/jstree/dist', 'public/library/jstree', false);
+
+/* Summernote package */
+// mix.copy('bower_components/summernote/dist', 'public/library/summernote', false);
 
 /* CKEditor files */
 mix.copy('node_modules/ckeditor/ckeditor.js', 'public/library/ckeditor');

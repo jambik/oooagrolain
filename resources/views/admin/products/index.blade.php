@@ -8,7 +8,7 @@
     <div class="row products">
         <div class="col-lg-3">
             <div class="list-group categories-list">
-                <a href="{{ route('admin.products.index') }}" class="list-group-item active"><strong>Категории</strong></a>
+                <a href="{{ route('admin.products.index') }}" class="list-group-item categories-caption"><strong>Категории</strong></a>
                 @foreach($categories as $category)
                     <a href="{{ route('admin.products.index').'?category='.$category->id }}" class="list-group-item depth-{{ $category->depth }}{{ request('category') == $category->id ? ' active' : '' }}">{{ $category->name }}{!! $category->products_count ? '<span class="badge">' . $category->products_count . '</span>' : '' !!}</a>
                 @endforeach

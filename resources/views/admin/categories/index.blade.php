@@ -9,7 +9,12 @@
 @endsection
 
 @section('head_scripts')
+    <script src="/library/jstree/jstree.min.js"></script>
     <link rel="stylesheet" href="/library/jstree/themes/default/style.min.css" />
+
+    <script src="/library/summernote/summernote.min.js"></script>
+    <script src="/library/summernote/lang/summernote-ru-RU.min.js"></script>
+    <link rel="stylesheet" href="/library/summernote/summernote.css" />
 @endsection
 
 @section('footer_scripts')
