@@ -91,9 +91,6 @@
         </div>
     </section>
 
-    @include('partials._status')
-    @include('partials._errors')
-
     @yield('content')
 
     <footer>

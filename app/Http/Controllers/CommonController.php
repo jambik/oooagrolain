@@ -78,7 +78,7 @@ class CommonController extends FrontendController
             ]);
         }
 
-        return redirect(route('feedback'))->with('status', 'Сообщение отправлено');
+        return redirect()->back()->with('status', 'Сообщение отправлено');
     }
 
     /**
