@@ -184,14 +184,7 @@
                 </div>
             </div>
         </div>
-
-        <div>&nbsp;</div>
-
-        <div>&nbsp;</div>
-
-        <div>&nbsp;</div>
     </section>
-
 
     @yield('content')
 
