@@ -16,19 +16,32 @@ h4 { font-size: 18pt; font-weight: 300; }
 .body {}
 .main-container { position: relative; margin: 0 auto; background: #fff; }
 
-header { min-height: 400px; background: #4b4539 url('../img/header-bg-2.jpg') center center no-repeat; color: #fff; }
-.header-top { background:rgba(0,0,0,0.4); padding: 20px 0; font-weight: 300; }
-.brand { font-size: 50pt; font-style: italic; text-align: center; margin: 50px 0 0 0; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); }
-.logo { text-align: center; }
-.logo img { margin: 10px 0 20px 0; }
-.logo-text { margin: 60px 0 0 0; }
-.slogan-line { text-align: center; }
-.slogan { font-weight: 300; text-transform: uppercase; text-align: center; width: 80%; padding: 20px 0 0 0; margin: 0 auto; }
-.slogan-side { font-style: italic; font-size: 15pt; text-align: center; margin: 160px 0 0 0;  }
+header { min-height: 750px; background: #4b4539 url('../img/picture-1.jpg') center center no-repeat; color: #fff; }
+.header-line-1 { height: 180px; }
+.header-line-2 { height: 570px; background: url('../img/header-shadow.png') center bottom repeat-x; }
+.header-text { font-size: 50pt; font-family: 'Exo 2', sans-serif; text-transform: uppercase; color: #000; font-weight: 100; }
+.header-link { display: inline-block; margin: 50px 0 0 0; background: #fff; color: #000; text-transform: uppercase; padding: 10px 20px; }
 
-.carousel-inner img { min-height: 200px; }
-.carousel-caption { bottom: 60px; background:rgba(0,0,0,0.4); }
-.carousel-indicators { bottom: 60px; }
+.menu-button { margin: 30px 0 0 30px; cursor: pointer; text-transform: uppercase; font-size: 12pt; font-weight: 700; color: #4b1a4e; background: url('../img/menu-icon.png') left center no-repeat; padding-left: 45px; padding-top: 2px; }
+.brand-name { margin: 30px 0 0 0; text-transform: uppercase; font-size: 12pt; font-weight: 700; color: #4b1a4e; }
+.stamp-dg { margin: 10px 0 0 0; width: 150px; height: 166px; background: url('../img/stamp-dg.png') top left no-repeat; display: inline-block; }
+
+#owner { text-align: center; background: #f9fafb; }
+.owner-picture { display: inline-block; margin: -100px 0 0 0; padding: 20px; background: #fff; }
+.owner-picture img { border: 2px solid #000; }
+
+#collection {}
+.collection-title { font-weight: 100; max-width: 1200px;  text-align: center; font-size: 60pt; margin: 40px auto 70px auto; border-bottom: 4px solid #eee; font-family: 'Exo 2', sans-serif; }
+.collection-item { height: 350px; }
+.collection-item img { max-width: 30%; float: left; }
+.collection-item .details { width: 60%; float: left; }
+.collection-item .name { font-size: 20pt; font-family: Georgia, "Times New Roman", Times, serif; }
+.collection-item .type { font-size: 13pt; color: #999; text-transform: uppercase; letter-spacing: 2px; }
+.collection-item .description { font-size: 11pt; color: #777; margin: 20px 0 0 0; }
+.collection-item .color { margin: 20px 0 0 0; }
+.collection-item .color div { width: 40px; height: 5px; }
+.collection-item .color-red { background: #dcb2b9; }
+.collection-item .color-white { background: #f3e9bc; }
 
 nav { text-align: center; background: #333; margin: -52px 0 0 0; position: relative; z-index: 5; }
 nav ul { *zoom:1; list-style: none; padding: 0; margin: 0; font-size: 12pt; display: inline-block; }
@@ -74,8 +87,10 @@ nav.fixed li ul a { color: #fff; }
 #products { background: #eadfc9 radial-gradient(circle at center, #f3f0e1 30%, #eadfc9 70%); }
 .product-name { font-size: 30pt; color: #8c151a; }
 
-footer { background: #333; padding: 20px 0; color: #fff; }
-.alcohol-note { margin: 70px 0; }
+footer { padding: 50px 0; border-top: 5px solid #eee; }
+.alcohol-note { margin: 0 0 30px 0; }
+.stamp-bottom { margin: 0 -300px 0 0; }
+.brand-bottom { font-size: 40pt; margin: -40px 0 0 0; text-transform: uppercase; font-family: Georgia, "Times New Roman", Times, serif; }
 
 [data-slides] {
     background-image: url('../img/header-bg-1.jpg');
