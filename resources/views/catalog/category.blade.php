@@ -8,6 +8,10 @@
     @include('partials._slides')
 @endsection
 
+@section('header')
+    @include('partials._header')
+@endsection
+
 @section('content')
     <div class="container content">
         @include('partials._status')
