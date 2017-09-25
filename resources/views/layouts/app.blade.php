@@ -60,6 +60,8 @@
     </footer>
 </div>
 
+<button onclick="topFunction()" id="myBtn" title="Наверх"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span><br>наверх</button>
+
 @include('partials._callback')
 @include('partials._flash')
 @include('partials._metrika')
