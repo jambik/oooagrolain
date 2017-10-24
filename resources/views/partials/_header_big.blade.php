@@ -23,6 +23,6 @@
 
 <section id="owner">
     <div class="owner-picture">
-        <img src="{{ asset('img/owner.jpg') }}" alt="">
+        <img src="{{ asset('img/logo.png') }}" alt="">
     </div>
 </section>
