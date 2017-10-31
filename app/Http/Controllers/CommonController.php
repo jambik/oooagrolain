@@ -23,6 +23,11 @@ class CommonController extends FrontendController
         return view('feedback', compact('page'));
     }
 
+    public function template()
+    {
+        return view('template');
+    }
+
     /**
      * Send feedback form.
      *

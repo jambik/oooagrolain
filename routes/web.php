@@ -90,6 +90,9 @@ Route::group([], function ()
     Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
 
     ## Search
+    Route::get('template', ['as' => 'search', 'uses' => 'CommonController@template']);
+
+    ## Search
     Route::get('/search', ['as' => 'search', 'uses' => 'SearchController@search']);
 
     # Feedback
