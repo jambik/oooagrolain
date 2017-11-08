@@ -30,34 +30,45 @@
     <title>@yield('title')</title>
 </head>
 <body>
-
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="/">Главная</a>
-    <a href="/page/about">О компании</a>
-    <a href="/catalog">Карта вин</a>
-    <a href="/galleries">Фотогалерея</a>
-    <a href="/page/partners">Партнерам</a>
-    <a href="/page/contacts">Контакты</a>
-</div>
-
 <div class="main-container">
 
-    @yield('header')
+    <header>
+        <div class="container-fluid">
+            <div class="top-pattern"></div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="quality-sign"></div>
+                    <div class="quality-text">
+                        <div class="line-1">Знак качества</div>
+                        <div class="line-2">Дербентские вина</div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <ul class="top-menu left">
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Фотогалерея</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 logo">
+                    <img src="{{ asset('img/logo.png') }}">
+                </div>
+                <div class="col-md-5 ">
+                    <div class="contacts-text">
+                        <div class="line-1">Россия, Республика Дагестан, г. Дербент</div>
+                        <div class="line-2">Телефон: +7 964 257 77 77</div>
+                    </div>
+                    <ul class="top-menu right">
+                        <li><a href="#">Карта вин</a></li>
+                        <li><a href="#">Партнерам</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
 
     @yield('content')
 
-    <footer>
-        <div class="container">
-            <div class="row text-center">
-                <p class="alcohol-note">ЧРЕЗМЕРНОЕ УПОТРЕБЛЕНИЕ АЛКОГОЛЯ ВРЕДИТ ВАШЕМУ ЗДОРОВЬЮ</p>
-            </div>
-            <div class="row text-center">
-                <img src="{{ asset('img/stamp-dg-small.png') }}" class="stamp-bottom" alt="">
-                <div class="brand-bottom">Агролайн</div>
-            </div>
-        </div>
-    </footer>
 </div>
 
 <button onclick="topFunction()" id="myBtn" title="Наверх"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span><br>наверх</button>
