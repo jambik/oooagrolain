@@ -9,10 +9,6 @@ $(document).ready(function() {
         animateIn: 'flipInX'
     });
 
-
-
-
-
     // Header
     $('#quality-sign').animate({opacity: 1}, 500).addClass("animated slideInDown");
     $('#top-contacts').animate({opacity: 1}, 500).addClass("animated slideInDown");
@@ -21,53 +17,24 @@ $(document).ready(function() {
     $('#menu-right').animate({opacity: 1}, 500).addClass("animated slideInRight");
 
     // Carousel
-    $('#carousel').waypoint(function() {
-        $(this.element).animate({opacity: 1}, 500).addClass("animated zoomIn");
-    }, { offset: '90%' });
+    $('#carousel').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated zoomIn") }, { offset: '90%' });
 
     // Enter text and blocks
-    $('#enter-title').waypoint(function() {
-        $(this.element).animate({opacity: 1}, 500).addClass("animated slideInDown");
-    }, { offset: '80%' });
-    $('#enter-text').waypoint(function() {
-        $(this.element).animate({opacity: 1}, 500).addClass("animated flipInX");
-    }, { offset: '80%' });
-
-    $('#enter-blocks').waypoint(function() {
-        $('#enter-block-1').animate({opacity: 1}, 500).addClass("animated slideInUp");
-
-        setTimeout(function(){
-            $('#enter-block-2').animate({opacity: 1}, 500).addClass("animated slideInUp");
-        }, 200);
-
-        setTimeout(function(){
-            $('#enter-block-3').animate({opacity: 1}, 500).addClass("animated slideInUp");
-        }, 500);
-    }, { offset: '80%' });
+    $('#enter-title').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInDown") }, { offset: '80%' });
+    $('#enter-text').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated flipInX") }, { offset: '80%' });
+    $('#enter-block-1').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInUp") }, { offset: '80%' });
+    $('#enter-block-2').waypoint(function() { setTimeout(function(){ $('#enter-block-2').animate({opacity: 1}, 500).addClass("animated slideInUp") }, 200) }, { offset: '80%' });
+    $('#enter-block-3').waypoint(function() { setTimeout(function(){ $('#enter-block-3').animate({opacity: 1}, 500).addClass("animated slideInUp") }, 500); }, { offset: '80%' });
 
     // Wine Collections
-    $('#wine-collection-title').waypoint(function() {
-        $(this.element).animate({opacity: 1}, 500).addClass("animated slideInDown");
-    }, { offset: '70%' });
-    $('#wine-collection').waypoint(function() {
-        $('#wine-1').animate({opacity: 1}, 500).addClass("animated bounceIn");
+    $('#wine-collection-title').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInDown") }, { offset: '70%' });
+    $('#wine-1').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated bounceIn")}, { offset: '80%' });
+    $('#wine-2').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated bounceIn")}, { offset: '80%' });
+    $('#wine-3').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated bounceIn")}, { offset: '80%' });
+    $('#wine-4').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated bounceIn")}, { offset: '80%' });
 
-        setTimeout(function(){
-            $('#wine-2').animate({opacity: 1}, 500).addClass("animated bounceIn");
-        }, 100);
-
-        setTimeout(function(){
-            $('#wine-3').animate({opacity: 1}, 500).addClass("animated bounceIn");
-        }, 200);
-
-        setTimeout(function(){
-            $('#wine-4').animate({opacity: 1}, 500).addClass("animated bounceIn");
-        }, 300);
-    }, { offset: '80%' });
-
-    $('#owner-photo').waypoint(function() {
-        $(this.element).animate({opacity: 1}, 500).addClass("animated fadeIn");
-    }, { offset: '80%' });
+    // Owner
+    $('#owner-photo').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated fadeIn")}, { offset: '80%' });
 
 
 
