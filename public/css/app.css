@@ -140,8 +140,11 @@ body { background: url('../img/website-bg.jpg') top center fixed; }
 /* Extra small devices - less than 768 */
 @media (max-width: 767px) {
     .top-menu { margin-top: 35px; }
-    .top-menu li { display: block; margin: 0; }
+    .top-menu li { display: block; margin: 0; font-size: 8pt; }
     .owner-photo { width: 100%; }
+    .quality-text { font-size: 8pt; letter-spacing: normal; margin-left: 0; }
+    .contacts-text { font-size: 8pt; }
+    .pattern-line h1 { font-size: 15pt; margin: 0 auto; padding: 10px 5px; color: #645944; text-transform: uppercase; }
 }
 
 /* Small devices (tablets, 768px and up) */

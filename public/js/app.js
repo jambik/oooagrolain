@@ -2,9 +2,11 @@ $(document).ready(function() {
 
     // Carousel
     $("#carousel").owlCarousel({
-        loop:true,
-        margin:10,
-        items:1
+        loop: true,
+        items: 1,
+        margin: 100,
+        animateOut: 'slideOutDown',
+        animateIn: 'flipInX'
     });
 
 
@@ -26,7 +28,7 @@ $(document).ready(function() {
     // Enter text and blocks
     $('#enter-title').waypoint(function() {
         $(this.element).animate({opacity: 1}, 500).addClass("animated slideInDown");
-    }, { offset: '70%' });
+    }, { offset: '80%' });
     $('#enter-text').waypoint(function() {
         $(this.element).animate({opacity: 1}, 500).addClass("animated flipInX");
     }, { offset: '80%' });
