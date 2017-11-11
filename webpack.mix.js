@@ -21,12 +21,16 @@ mix.combine([
     'bower_components/magnific-popup/dist/magnific-popup.css',
     'bower_components/cropper/dist/cropper.min.css',
     'bower_components/font-awesome/css/font-awesome.min.css',
-    'bower_components/animate.css/animate.min.css'
+    'bower_components/animate.css/animate.min.css',
+    'bower_components/owl.carousel/dist/assets/owl.carousel.min.css',
+    'bower_components/owl.carousel/dist/assets/owl.theme.default.min.css'
 ], 'public/css/app.bundle.css');
 mix.combine([
     'bower_components/jquery/dist/jquery.min.js',
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
     'bower_components/sweetalert/dist/sweetalert.min.js',
+    'bower_components/waypoints/lib/jquery.waypoints.min.js',
+    'bower_components/owl.carousel/dist/owl.carousel.min.js',
     'bower_components/jquery.scrollTo/jquery.scrollTo.min.js',
     'bower_components/noty/js/noty/packaged/jquery.noty.packaged.min.js',
     'bower_components/magnific-popup/dist/jquery.magnific-popup.min.js',

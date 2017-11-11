@@ -1,6 +1,91 @@
 $(document).ready(function() {
 
-    // performSlideshow();
+    // Carousel
+    $("#carousel").owlCarousel({
+        loop:true,
+        margin:10,
+        items:1
+    });
+
+
+
+
+
+    // Header
+    $('#quality-sign').animate({opacity: 1}, 500).addClass("animated slideInDown");
+    $('#top-contacts').animate({opacity: 1}, 500).addClass("animated slideInDown");
+    $('#menu-left').animate({opacity: 1}, 500).addClass("animated slideInLeft");
+    $('#logo').animate({opacity: 1}, 500).addClass("animated zoomIn");
+    $('#menu-right').animate({opacity: 1}, 500).addClass("animated slideInRight");
+
+    // Carousel
+    $('#carousel').waypoint(function() {
+        $(this.element).animate({opacity: 1}, 500).addClass("animated zoomIn");
+    }, { offset: '90%' });
+
+    // Enter text and blocks
+    $('#enter-title').waypoint(function() {
+        $(this.element).animate({opacity: 1}, 500).addClass("animated slideInDown");
+    }, { offset: '70%' });
+    $('#enter-text').waypoint(function() {
+        $(this.element).animate({opacity: 1}, 500).addClass("animated flipInX");
+    }, { offset: '80%' });
+
+    $('#enter-blocks').waypoint(function() {
+        $('#enter-block-1').animate({opacity: 1}, 500).addClass("animated slideInUp");
+
+        setTimeout(function(){
+            $('#enter-block-2').animate({opacity: 1}, 500).addClass("animated slideInUp");
+        }, 200);
+
+        setTimeout(function(){
+            $('#enter-block-3').animate({opacity: 1}, 500).addClass("animated slideInUp");
+        }, 500);
+    }, { offset: '80%' });
+
+    // Wine Collections
+    $('#wine-collection-title').waypoint(function() {
+        $(this.element).animate({opacity: 1}, 500).addClass("animated slideInDown");
+    }, { offset: '70%' });
+    $('#wine-collection').waypoint(function() {
+        $('#wine-1').animate({opacity: 1}, 500).addClass("animated bounceIn");
+
+        setTimeout(function(){
+            $('#wine-2').animate({opacity: 1}, 500).addClass("animated bounceIn");
+        }, 100);
+
+        setTimeout(function(){
+            $('#wine-3').animate({opacity: 1}, 500).addClass("animated bounceIn");
+        }, 200);
+
+        setTimeout(function(){
+            $('#wine-4').animate({opacity: 1}, 500).addClass("animated bounceIn");
+        }, 300);
+    }, { offset: '80%' });
+
+    $('#owner-photo').waypoint(function() {
+        $(this.element).animate({opacity: 1}, 500).addClass("animated fadeIn");
+    }, { offset: '80%' });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     if ($('#form_callback').length) {
         $('#form_callback').on('submit', function(e){
@@ -48,21 +133,11 @@ function scrollFunction() {
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-    document.body.scrollTop = 0; // For Chrome, Safari and Opera
-    document.documentElement.scrollTop = 0; // For IE and Firefox
-}
+    // document.body.scrollTop = 0; // For Chrome, Safari and Opera
+    // document.documentElement.scrollTop = 0; // For IE and Firefox
 
-
-
-
-/* Set the width of the side navigation to 250px */
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+    var body = $("html, body");
+    body.stop().animate({scrollTop:0}, 500, 'swing');
 }
 
 function ajaxFormSubmit(e, successFunction)

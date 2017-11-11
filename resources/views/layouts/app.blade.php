@@ -36,27 +36,33 @@
         <div class="container-fluid">
             <div class="top-pattern"></div>
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-xs-6" id="quality-sign" style="opacity: 0;">
                     <div class="quality-sign"></div>
                     <div class="quality-text">
                         <div class="line-1">Знак качества</div>
                         <div class="line-2">Дербентские вина</div>
                     </div>
                     <div class="clearfix"></div>
+                </div>
+                <div class="col-xs-6" id="top-contacts" style="opacity: 0;">
+                    <div class="contacts-text">
+                        <div class="line-1">Россия, Республика Дагестан, г. Дербент</div>
+                        <div class="line-2">Телефон: +7 964 257 77 77</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 col-xs-4" id="menu-left" style="opacity: 0;">
                     <ul class="top-menu left">
                         <li><a href="#">Главная</a></li>
                         <li><a href="#">О нас</a></li>
                         <li><a href="#">Фотогалерея</a></li>
                     </ul>
                 </div>
-                <div class="col-md-2 logo">
-                    <img src="{{ asset('img/logo.png') }}">
+                <div class="col-sm-2 col-xs-4 logo" id="logo" style="opacity: 0;">
+                    <img src="{{ asset('img/logo.png') }}" class="img-responsive">
                 </div>
-                <div class="col-md-5 ">
-                    <div class="contacts-text">
-                        <div class="line-1">Россия, Республика Дагестан, г. Дербент</div>
-                        <div class="line-2">Телефон: +7 964 257 77 77</div>
-                    </div>
+                <div class="col-sm-5 col-xs-4" id="menu-right" style="opacity: 0;">
                     <ul class="top-menu right">
                         <li><a href="#">Карта вин</a></li>
                         <li><a href="#">Партнерам</a></li>

@@ -8,33 +8,34 @@
     <section id="content">
         <div class="container-fluid container-content">
             <div class="content-padding">
-                <div class="carousel">
-                    <div class="arrow-left"></div>
-                    <div class="picture"><img src="{{ asset('img/picture-1.jpg') }}"></div>
-                    <div class="arrow-right"></div>
+                <p>&nbsp;</p>
+                <div class="owl-carousel owl-theme" id="carousel">
+                    <img src="{{ asset('img/picture-1.jpg') }}">
+                    <img src="{{ asset('img/picture-1.jpg') }}">
+                    <img src="{{ asset('img/picture-1.jpg') }}">
+                    <img src="{{ asset('img/picture-1.jpg') }}">
                 </div>
-                <div class="clearfix"></div>
             </div>
             <p>&nbsp;</p>
             <p>&nbsp;</p>
 
-            <div class="row">
+            <div class="row" id="enter-title" style="opacity: 0;">
                 <div class="pattern-line">
                     <h1>Винодельческое хозяйство Агролайн</h1>
                 </div>
             </div>
             <p>&nbsp;</p>
 
-            <div class="enter-text">
+            <div class="enter-text" id="enter-text" style="opacity: 0;">
                 История винодельческого предприятия «Агролайн» началась в 2001 году, в удивительном по красоте месте Дагестана, между Каспийским морем и Кавказскими горами. Этот удивительный уголок благодатного края будто самой природой был предназначен для выращивания винограда и виноделия.
             </div>
 
             <p>&nbsp;</p>
             <p>&nbsp;</p>
 
-            <div class="content-padding">
+            <div class="content-padding" id="enter-blocks">
                 <div class="row">
-                    <div class="col-md-4 block-about">
+                    <div class="col-md-4 col-sm-6 block-about" id="enter-block-1" style="opacity: 0;">
                         <div class="inner">
                             <img src="{{ asset('img/vineyard.jpg') }}">
                             <div class="pattern"></div>
@@ -44,7 +45,7 @@
                             <div class="pattern"></div>
                         </div>
                     </div>
-                    <div class="col-md-4 block-about">
+                    <div class="col-md-4 col-sm-6 block-about" id="enter-block-2" style="opacity: 0;">
                         <div class="inner">
                             <img src="{{ asset('img/production.jpg') }}">
                             <div class="pattern"></div>
@@ -54,7 +55,7 @@
                             <div class="pattern"></div>
                         </div>
                     </div>
-                    <div class="col-md-4 block-about">
+                    <div class="col-md-4 col-sm-6 block-about" id="enter-block-3" style="opacity: 0;">
                         <div class="inner">
                             <img src="{{ asset('img/products.jpg') }}">
                             <div class="pattern"></div>
@@ -72,7 +73,7 @@
             <p>&nbsp;</p>
             <p>&nbsp;</p>
 
-            <div class="row">
+            <div class="row" id="wine-collection-title" style="opacity: 0;">
                 <div class="pattern-line">
                     <h1>Коллекция вин</h1>
                 </div>
@@ -82,9 +83,9 @@
             <p>&nbsp;</p>
             <p>&nbsp;</p>
 
-            <div class="content-padding">
+            <div class="content-padding" id="wine-collection">
                 <div class="row">
-                    <div class="col-md-6 product-block">
+                    <div class="col-md-6 product-block" id="wine-1" style="opacity: 0;">
                         <div class="img"><img src="{{ asset('img/product-caberne.jpg') }}"></div>
                         <div class="description">
                             <div class="name">Каберне Савиньон</div>
@@ -94,7 +95,7 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="col-md-6 product-block">
+                    <div class="col-md-6 product-block" id="wine-2" style="opacity: 0;">
                         <div class="img"><img src="{{ asset('img/product-rkaciteli.jpg') }}"></div>
                         <div class="description">
                             <div class="name">Ркацители</div>
@@ -104,7 +105,7 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="col-md-6 product-block">
+                    <div class="col-md-6 product-block" id="wine-3" style="opacity: 0;">
                         <div class="img"><img src="{{ asset('img/product-saperavi.jpg') }}"></div>
                         <div class="description">
                             <div class="name">Саперави</div>
@@ -114,7 +115,7 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="col-md-6 product-block">
+                    <div class="col-md-6 product-block" id="wine-4" style="opacity: 0;">
                         <div class="img"><img src="{{ asset('img/product-shardone.jpg') }}"></div>
                         <div class="description">
                             <div class="name">Шардоне</div>
@@ -136,7 +137,7 @@
                     <div class="owner-stamp"></div>
                 </div>
                 <div class="col-md-6 owner-photo">
-                    <img src="{{ asset('img/owner.jpg') }}" class="img-responsive">
+                    <img src="{{ asset('img/owner.jpg') }}" id="owner-photo" style="opacity: 0;" class="img-responsive">
                 </div>
             </div>
 
@@ -146,7 +147,7 @@
 
             <div class="content-padding">
                 <div class="row">
-                    <div class="col-md-4 feedback-form">
+                    <div class="col-md-5 feedback-form">
                         <div class="form-caption">Напишите нам</div>
                         <p>&nbsp;</p>
                         <form>
@@ -164,8 +165,8 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-2 col-md-offset-1 bottom-stamp">
-                        <img src="{{ asset('img/stamp-big.png') }}">
+                    <div class="col-md-2 bottom-stamp">
+                        <img src="{{ asset('img/stamp-big.png') }}" class="img-responsive">
                     </div>
                     <div class="col-md-5">
                         <ul class="bottom-menu">
