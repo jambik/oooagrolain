@@ -22,9 +22,11 @@ $(document).ready(function() {
     // Enter text and blocks
     $('#enter-title').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInDown") }, { offset: '80%' });
     $('#enter-text').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInUp") }, { offset: '80%' });
-    $('#enter-block-1').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInUp") }, { offset: '80%' });
-    $('#enter-block-1').waypoint(function() { setTimeout(function(){ $('#enter-block-2').animate({opacity: 1}, 500).addClass("animated slideInUp") }, 200) }, { offset: '80%' });
-    $('#enter-block-1').waypoint(function() { setTimeout(function(){ $('#enter-block-3').animate({opacity: 1}, 500).addClass("animated slideInUp") }, 500); }, { offset: '80%' });
+    $('#enter-block-1').waypoint(function() {
+        $(this.element).animate({opacity: 1}, 500).addClass("animated slideInUp");
+        setTimeout(function(){ $('#enter-block-2').animate({opacity: 1}, 500).addClass("animated slideInUp") }, 200);
+        setTimeout(function(){ $('#enter-block-3').animate({opacity: 1}, 500).addClass("animated slideInUp") }, 500);
+    }, { offset: '80%' });
 
     // Wine Collections
     $('#wine-collection-title').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInDown") }, { offset: '80%' });
