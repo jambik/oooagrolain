@@ -17,7 +17,7 @@ body { background: url('../img/website-bg.jpg') top center fixed; }
 .main-container { position: relative; margin: 0 auto; max-width: 1280px; }
 
 .top-pattern { height: 16px; background: url('../img/pattern-1.png'); }
-.quality-sign { float: left; margin: 20px 0 0 0; width: 49px; height: 49px; background: url('../img/stamp-small.png') center center no-repeat; }
+.quality-sign { float:left; margin: 20px 0 0 0; width: 49px; height: 49px; }
 .quality-text { float: left; color: #000; margin: 20px 0 0 20px; font-size: 11pt; letter-spacing: 2px; }
 .quality-text .line-1 { text-transform: uppercase; }
 .quality-text .line-2 { display: inline-block; border-top: 1px solid #000; text-transform: uppercase; }
@@ -139,14 +139,18 @@ body { background: url('../img/website-bg.jpg') top center fixed; }
 
 /* Extra small devices - less than 768 */
 @media (max-width: 767px) {
+    .content-padding { padding: 0; }
     .top-menu { margin-top: 35px; }
     .top-menu li { display: block; margin: 0; font-size: 9pt; }
     .logo { margin-top: 20px; }
     .enter-text { margin: 0 5%; }
     .owner-photo { width: 100%; }
-    .quality-text { font-size: 8pt; letter-spacing: normal; margin-left: 0; }
+    .quality-sign { width: 30px; height: 30px; }
+    .quality-text { font-size: 8pt; letter-spacing: normal; margin-left: 5px; }
     .contacts-text { font-size: 8pt; }
     .pattern-line h1 { font-size: 16pt; margin: 0 auto; padding: 10px 20px; color: #645944; text-transform: uppercase; }
+    .product-block {  }
+    .product-block .img { width: 110px; }
 }
 
 /* Small devices (tablets, 768px and up) */

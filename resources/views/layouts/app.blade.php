@@ -37,7 +37,9 @@
             <div class="row">
                 <div class="top-pattern"></div>
                 <div class="col-xs-6" id="quality-sign" style="opacity: 0;">
-                    <div class="quality-sign hidden-xs"></div>
+                    <div class="quality-sign">
+                        <img src="{{ asset('img/stamp-small.png') }}" class="img-responsive">
+                    </div>
                     <div class="quality-text">
                         <div class="line-1">Знак качества</div>
                         <div class="line-2">Дербентские вина</div>

@@ -86,7 +86,7 @@
             <div class="content-padding" id="wine-collection">
                 <div class="row">
                     <div class="col-md-6 product-block" id="wine-1" style="opacity: 0;">
-                        <div class="img"><img src="{{ asset('img/product-caberne.jpg') }}"></div>
+                        <div class="img"><img src="{{ asset('img/product-caberne.jpg') }}" class="img-responsive"></div>
                         <div class="description">
                             <div class="name">Каберне Савиньон</div>
                             <div class="type">сухое, красное</div>
@@ -96,7 +96,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="col-md-6 product-block" id="wine-2" style="opacity: 0;">
-                        <div class="img"><img src="{{ asset('img/product-rkaciteli.jpg') }}"></div>
+                        <div class="img"><img src="{{ asset('img/product-rkaciteli.jpg') }}" class="img-responsive"></div>
                         <div class="description">
                             <div class="name">Ркацители</div>
                             <div class="type">сухое, белое</div>
@@ -106,7 +106,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="col-md-6 product-block" id="wine-3" style="opacity: 0;">
-                        <div class="img"><img src="{{ asset('img/product-saperavi.jpg') }}"></div>
+                        <div class="img"><img src="{{ asset('img/product-saperavi.jpg') }}" class="img-responsive"></div>
                         <div class="description">
                             <div class="name">Саперави</div>
                             <div class="type">сухое, белое</div>
@@ -116,7 +116,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="col-md-6 product-block" id="wine-4" style="opacity: 0;">
-                        <div class="img"><img src="{{ asset('img/product-shardone.jpg') }}"></div>
+                        <div class="img"><img src="{{ asset('img/product-shardone.jpg') }}" class="img-responsive"></div>
                         <div class="description">
                             <div class="name">Шардоне</div>
                             <div class="type">сухое, красное</div>
