@@ -13,7 +13,7 @@ $(document).ready(function() {
     $('#quality-sign').animate({opacity: 1}, 500).addClass("animated slideInDown");
     $('#top-contacts').animate({opacity: 1}, 500).addClass("animated slideInDown");
     $('#menu-left').animate({opacity: 1}, 500).addClass("animated slideInLeft");
-    $('#logo').animate({opacity: 1}, 500).addClass("animated zoomIn");
+    $('#logo').animate({opacity: 1}, 500).addClass("animated slideInRight");
     $('#menu-right').animate({opacity: 1}, 500).addClass("animated slideInRight");
 
     // Carousel
@@ -21,10 +21,10 @@ $(document).ready(function() {
 
     // Enter text and blocks
     $('#enter-title').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInDown") }, { offset: '80%' });
-    $('#enter-text').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated flipInX") }, { offset: '80%' });
+    $('#enter-text').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInUp") }, { offset: '80%' });
     $('#enter-block-1').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInUp") }, { offset: '80%' });
-    $('#enter-block-2').waypoint(function() { setTimeout(function(){ $('#enter-block-2').animate({opacity: 1}, 500).addClass("animated slideInUp") }, 200) }, { offset: '80%' });
-    $('#enter-block-3').waypoint(function() { setTimeout(function(){ $('#enter-block-3').animate({opacity: 1}, 500).addClass("animated slideInUp") }, 500); }, { offset: '80%' });
+    $('#enter-block-1').waypoint(function() { setTimeout(function(){ $('#enter-block-2').animate({opacity: 1}, 500).addClass("animated slideInUp") }, 200) }, { offset: '80%' });
+    $('#enter-block-1').waypoint(function() { setTimeout(function(){ $('#enter-block-3').animate({opacity: 1}, 500).addClass("animated slideInUp") }, 500); }, { offset: '80%' });
 
     // Wine Collections
     $('#wine-collection-title').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInDown") }, { offset: '80%' });
