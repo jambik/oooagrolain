@@ -24,8 +24,8 @@ $(document).ready(function() {
     $('#enter-text').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInUp") }, { offset: '80%' });
     $('#enter-blocks').waypoint(function() {
         $('#enter-block-1').animate({opacity: 1}, 500).addClass("animated slideInUp");
-        $('#enter-block-2').animate({opacity: 1}, 500).addClass("animated slideInUp");
-        $('#enter-block-3').animate({opacity: 1}, 500).addClass("animated slideInUp");
+        setTimeout(function(){ $('#enter-block-2').animate({opacity: 1}, 500).addClass("animated slideInUp") }, 200);
+        setTimeout(function(){ $('#enter-block-3').animate({opacity: 1}, 500).addClass("animated slideInUp") }, 500);
     }, { offset: '80%' });
 
     // Wine Collections
