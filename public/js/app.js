@@ -27,7 +27,7 @@ $(document).ready(function() {
     $('#enter-block-3').waypoint(function() { setTimeout(function(){ $('#enter-block-3').animate({opacity: 1}, 500).addClass("animated slideInUp") }, 500); }, { offset: '80%' });
 
     // Wine Collections
-    $('#wine-collection-title').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInDown") }, { offset: '70%' });
+    $('#wine-collection-title').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated slideInDown") }, { offset: '80%' });
     $('#wine-1').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated bounceIn")}, { offset: '80%' });
     $('#wine-2').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated bounceIn")}, { offset: '80%' });
     $('#wine-3').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated bounceIn")}, { offset: '80%' });
