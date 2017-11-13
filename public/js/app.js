@@ -4,9 +4,9 @@ $(document).ready(function() {
     $("#carousel").owlCarousel({
         loop: true,
         items: 1,
-        margin: 100,
-        animateOut: 'slideOutDown',
-        animateIn: 'flipInX'
+        margin: 0,
+        animateOut: 'fadeOutDown',
+        animateIn: 'fadeInDown'
     });
 
     // Header
