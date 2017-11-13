@@ -42,7 +42,7 @@
                     </div>
                     <div class="quality-text">
                         <div class="line-1">Знак качества</div>
-                        <div class="line-2">Дербентские вина</div>
+                        <div class="line-2">Семьи Давыдовых</div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
