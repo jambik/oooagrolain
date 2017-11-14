@@ -10,6 +10,7 @@
             <div class="content-padding">
                 <p>&nbsp;</p>
                 <div class="owl-carousel owl-theme" id="carousel">
+                    <img src="{{ asset('img/picture-5.jpg') }}">
                     <img src="{{ asset('img/picture-1.jpg') }}">
                     <img src="{{ asset('img/picture-2.jpg') }}">
                     <img src="{{ asset('img/picture-3.jpg') }}">
