@@ -5,6 +5,9 @@ $(document).ready(function() {
         loop: true,
         items: 1,
         margin: 0,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
         animateOut: 'fadeOutDown',
         animateIn: 'fadeInDown'
     });
