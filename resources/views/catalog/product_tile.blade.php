@@ -2,7 +2,7 @@
     <div class="product-tile thumbnail">
         <div class="img">
             @if ($product->image)
-                <a class="popup-product" title="{{ $product->name }}" href="/images/original/{{ $product->img_url . $product->image }}">
+                <a class="popup-product" title="{{ $product->name }}" href="/images/large/{{ $product->img_url . $product->image }}">
                     <img src="/images/medium/{{ $product->img_url . $product->image }}" class="img-responsive">
                 </a>
             @else

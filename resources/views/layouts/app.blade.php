@@ -56,9 +56,9 @@
             <div class="row">
                 <div class="col-sm-5 col-xs-4" id="menu-left" style="opacity: 0;">
                     <ul class="top-menu left">
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Фотогалерея</a></li>
+                        <li><a href="{{ route('index') }}">Главная</a></li>
+                        <li><a href="{{ route('page.show', 'about') }}">О нас</a></li>
+                        <li><a href="{{ route('galleries') }}">Фотогалерея</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2 col-xs-4 logo" id="logo" style="opacity: 0;">
@@ -66,9 +66,9 @@
                 </div>
                 <div class="col-sm-5 col-xs-4" id="menu-right" style="opacity: 0;">
                     <ul class="top-menu right">
-                        <li><a href="#">Карта вин</a></li>
-                        <li><a href="#">Партнерам</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="{{ route('catalog') }}">Карта вин</a></li>
+                        <li><a href="{{ route('page.show', 'partners') }}">Партнерам</a></li>
+                        <li><a href="{{ route('page.show', 'contacts') }}">Контакты</a></li>
                     </ul>
                 </div>
             </div>

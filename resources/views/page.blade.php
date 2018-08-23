@@ -4,113 +4,106 @@
 @section('keywords', $page->header ? $page->header->keywords : '')
 @section('description', $page->header ? $page->header->description : '')
 
-@section('slides')
-    @include('partials._slides')
-@endsection
-
-@section('header')
-    @include('partials._header')
-@endsection
-
 @section('content')
-    <div class="container content">
-        @include('partials._status')
-        @include('partials._errors')
+    <section id="content">
+        <div class="container-fluid container-content">
 
-        {!! $page->text !!}
+            @include('partials._status')
+            @include('partials._errors')
 
-        @if ($page->slug == 'wines')
+            <div class="content-padding">
+                {!! $page->text !!}
+            </div>
+
             <p>&nbsp;</p>
-            <div class="row products">
-                <div class="col-sm-3 product-item">
-                    <img src="{{ asset('img/product-1.png') }}">
-                    <div class="product-name">Сухое красное</div>
-                    <div class="product-description">Полнотелое, элегантное вино с прекрасным балансом, великолепной структурой и продолжительным многогранным сладковатым послевкусием.</div>
-                    <div class="product-spec">Объем 0,7 л</div>
-                    <div class="product-spec">Спирт 10-12% об.</div>
-                </div>
-                <div class="col-sm-3 product-item">
-                    <img src="{{ asset('img/product-2.png') }}">
-                    <div class="product-name">Сухое красное</div>
-                    <div class="product-description">Насыщенный пурпурный цвет. Богатый, изысканный букет, в котором виноградные нотки очень гармонично дополнены фруктовыми тонами с цветочными оттенками.</div>
-                    <div class="product-spec">Объем 0,7 л</div>
-                    <div class="product-spec">Спирт 10-12% об.</div>
-                </div>
-                <div class="col-sm-3 product-item">
-                    <img src="{{ asset('img/product-3.png') }}">
-                    <div class="product-name">Сухое красное</div>
-                    <div class="product-description">Богатый, изысканный букет, в котором виноградные нотки очень гармонично дополнены фруктовыми тонами с цветочными оттенками. Насыщенный пурпурный цвет.</div>
-                    <div class="product-spec">Объем 0,7 л</div>
-                    <div class="product-spec">Спирт 10-12% об.</div>
-                </div>
-                <div class="col-sm-3 product-item">
-                    <img src="{{ asset('img/product-4.png') }}">
-                    <div class="product-name">Сухое красное</div>
-                    <div class="product-description">Богатый, изысканный букет, в котором виноградные нотки очень гармонично дополнены фруктовыми тонами с цветочными оттенками.</div>
-                    <div class="product-spec">Объем 0,7 л</div>
-                    <div class="product-spec">Спирт 10-12% об.</div>
-                </div>
-                <div class="col-sm-3 product-item">
-                    <img src="{{ asset('img/product-5.png') }}">
-                    <div class="product-name">Сухое красное</div>
-                    <div class="product-description">Полнотелое, элегантное вино с прекрасным балансом, великолепной структурой и продолжительным многогранным сладковатым послевкусием.</div>
-                    <div class="product-spec">Объем 0,7 л</div>
-                    <div class="product-spec">Спирт 10-12% об.</div>
-                </div>
-                <div class="col-sm-3 product-item">
-                    <img src="{{ asset('img/product-6.png') }}">
-                    <div class="product-name">Сухое красное</div>
-                    <div class="product-description">Насыщенный пурпурный цвет. Богатый, изысканный букет, в котором виноградные нотки очень гармонично дополнены фруктовыми тонами с цветочными оттенками.</div>
-                    <div class="product-spec">Объем 0,7 л</div>
-                    <div class="product-spec">Спирт 10-12% об.</div>
-                </div>
-                <div class="col-sm-3 product-item">
-                    <img src="{{ asset('img/product-7.png') }}">
-                    <div class="product-name">Сухое красное</div>
-                    <div class="product-description">Богатый, изысканный букет, в котором виноградные нотки очень гармонично дополнены фруктовыми тонами с цветочными оттенками. Насыщенный пурпурный цвет.</div>
-                    <div class="product-spec">Объем 0,7 л</div>
-                    <div class="product-spec">Спирт 10-12% об.</div>
-                </div>
-                <div class="col-sm-3 product-item">
-                    <img src="{{ asset('img/product-1.png') }}">
-                    <div class="product-name">Сухое красное</div>
-                    <div class="product-description">Богатый, изысканный букет, в котором виноградные нотки очень гармонично дополнены фруктовыми тонами с цветочными оттенками.</div>
-                    <div class="product-spec">Объем 0,7 л</div>
-                    <div class="product-spec">Спирт 10-12% об.</div>
-                </div>
-            </div>
-        @endif
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
 
-        @if ($page->slug == 'contacts')
-            <div>&nbsp;</div>
-            <hr>
-            <h3>Обратная связь</h3>
-            <div>&nbsp;</div>
-            <div class="col-md-6">
-                <form action="{{ route('feedback.send') }}" method="POST" id="form_feedback">
-                    {!! Form::token() !!}
-                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                        <input type="text" class="form-control" name="name" placeholder="Имя" value="{{ old('name') }}">
-                    </div>
-                    <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                        <input type="text" class="form-control" name="phone" placeholder="Телефон" value="{{ old('phone') }}">
-                    </div>
-                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <input type="text" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
-                    </div>
-                    <div class="form-group{{ $errors->has('message') ? ' has-error' : '' }}">
-                        <textarea class="form-control" name="message" placeholder="Сообщение" style="min-height: 150px;">{{ old('message') }}</textarea>
-                    </div>
-                    <div class="form-group">
-                        <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-lg btn-primary btn-block">Отправить сообщение</button>
-                    </div>
-                </form>
+            <div class="owner row">
+                <div class="col-md-6 owner-text">
+                    <div class="owner-name">Давыдов Год Пануилович</div>
+                    <div class="owner-pic"></div>
+                    <div class="owner-text-1">Наша миссия не только сохранить, но и приумножить традиции виноделия Дербента. Мы хотим внести свой собственный, пусть и небольшой, вклад в развитие отрасли в нашей любимой стране.</div>
+                    <div class="owner-text-2">Только натуральное вино отменного качества заслуживает того, чтобы оказаться на вашем столе!</div>
+                    <div class="owner-stamp"></div>
+                </div>
+                <div class="col-md-6 owner-photo">
+                    <img src="{{ asset('img/owner.jpg') }}" id="owner-photo" style="opacity: 0;" class="img-responsive">
+                </div>
             </div>
-        @endif
-    </div>
+
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
+            <div class="content-padding">
+                <div class="row">
+                    <div class="col-md-5 feedback-form">
+                        <div class="form-caption">Напишите нам</div>
+                        <p>&nbsp;</p>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" class="form-control" id="email" placeholder="Ваше email">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" id="message" placeholder="Ваше сообщение"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-block btn-lg">Отправить сообщение</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-2 bottom-stamp">
+                        <img src="{{ asset('img/stamp-big.png') }}" class="img-responsive">
+                    </div>
+                    <div class="col-md-5">
+                        <ul class="bottom-menu">
+                            <li><a href="#">Главная</a></li>
+                            <li><a href="#">О нас</a></li>
+                            <li><a href="#">Фотогалерея</a></li>
+                            <li><a href="#">Карта вин</a></li>
+                            <li><a href="#">Партнерам</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+
+                        <div class="bottom-contacts">
+                            <div class="contact-line">
+                                <div class="icon"><img src="{{ asset('img/icon-map.png') }}"></div>
+                                <div class="line">368608, Россия, Республика Дагестан, г. Дербент, ул. М. Долгата, 24, А</div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="contact-line">
+                                <div class="icon"><img src="{{ asset('img/icon-phone.png') }}"></div>
+                                <div class="line">Телефон +7 964 257 77 77</div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="contact-line">
+                                <div class="icon"><img src="{{ asset('img/icon-email.png') }}"></div>
+                                <div class="line">Email для связи - oooagrolain@yandex.ru</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
+            <div class="row inline-gallery">
+                <img src="{{ asset('img/gallery-1.jpg') }}">
+                <img src="{{ asset('img/gallery-2.jpg') }}">
+                <img src="{{ asset('img/gallery-3.jpg') }}">
+                <img src="{{ asset('img/gallery-4.jpg') }}">
+                <img src="{{ asset('img/gallery-5.jpg') }}">
+            </div>
+
+        </div>
+    </section>
 @endsection
 
 @section('header_scripts')
