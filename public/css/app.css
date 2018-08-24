@@ -52,15 +52,16 @@ body { background: url('../img/website-bg.jpg') top center fixed; }
 .block-about .name { font-size: 17pt; text-align: center; margin: 20px 0 20px 0; text-transform: uppercase; }
 .block-about .text { font-size: 12pt; text-align: center; margin: 0 20px 20px 20px; font-style: italic; height: 152px; overflow: hidden; }
 .block-about .button { text-align: center; margin: 0 0 20px 0; }
-.block-about button { text-transform: uppercase; padding: 10px 40px; background-color: #a3621b; color: #fff; }
-.block-about button:hover { color: #fff; }
+.block-about .button a { text-transform: uppercase; padding: 10px 40px; background-color: #a3621b; color: #fff; }
+.block-about .button a:hover { color: #fff; }
 
-.product-block { margin: 0 0 100px 0; }
+.product-block { margin: 0 0 100px 0; min-height: 300px; }
 .product-block .img { float: left; width: 150px; }
 .product-block .description { float: left; width: 60%; }
 .product-block .name { font-family: Georgia, "Times New Roman", Times, serif; font-size: 20pt; color: #000; }
 .product-block .type { font-size: 12pt; margin: 10px 0 20px 0; color: #777; text-transform: uppercase; letter-spacing: 5px; }
-.product-block .about { font-size: 11pt; color: #777; }
+.product-block .about { font-size: 11pt; color: #777; margin: 0 0 20px 0; }
+.product-block .volume, .product-block .strength { font-size: 10pt; color: #000; }
 .product-block .wine-type { width: 40px; height: 5px; margin: 10px 0; }
 .product-block .white { background: #f3e9bc; }
 .product-block .red { background: #dcb2b9; }
@@ -103,6 +104,15 @@ body { background: url('../img/website-bg.jpg') top center fixed; }
 
 .inline-gallery {}
 .inline-gallery img { display: block; float: left; width: 20%; }
+
+.galleries-list { }
+.galleries-list .item { border-bottom: 1px solid #ddd; padding: 15px 0; }
+.galleries-list .item:last-child { border-bottom: none; }
+.galleries-list .name { font-size: 150%; }
+
+.gallery-photos { min-height: 300px; }
+
+.all-wines { display: block; width: 40%; text-align: center; position: relative; clear: both; margin: 0 auto; background: #558000; color: #fff; font-size: 14pt; text-transform: uppercase; padding: 10px 20px; }
 
 #myBtn {
     display: none; /* Hidden by default */

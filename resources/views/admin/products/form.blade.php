@@ -11,10 +11,13 @@
     </div>
 @endif
 
-{{--<div class="form-group">
-    {!! Form::label('price', 'Цена') !!}
-    {!! Form::text('price', null, ['class' => 'form-control']) !!}
-</div>--}}
+<div class="form-group">
+    {!! Form::label('type', 'Тип вина') !!}
+    <select name="type" id="type" class="form-control">
+        <option value="0">- Выберите тип вина -</option>
+        @foreach (trans('vars.type') as $key => $val)<option value="{{ $key }}"{{ isset($item) && $item->type == $key ? ' selected' : '' }}>{{ $val }}</option>@endforeach
+    </select>
+</div>
 
 <div class="form-group">
     {!! Form::label('category_id', 'Категория') !!}
