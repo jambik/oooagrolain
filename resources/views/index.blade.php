@@ -117,7 +117,7 @@
                         @endforeach
 
                         {{--<div class="clearfix"></div>--}}
-                        <a class="all-wines" href="{{ route('catalog') }}">Вся карта вин</a>
+                        <a class="all-wines" href="{{ route('catalog') }}">Вся коллекция вин</a>
                     @else
                         <div class="no-items">Раздел пока пуст</div>
                     @endif
