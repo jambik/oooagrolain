@@ -55,12 +55,12 @@
             <div class="bottom-contacts">
                 <div class="contact-line">
                     <div class="icon"><img src="{{ asset('img/icon-map.png') }}"></div>
-                    <div class="line">368608, Россия, Республика Дагестан, г. Дербент, ул. М. Долгата, 24, А</div>
+                    <div class="line">368608, Россия, Республика Дагестан, г. Дербент, ул. М. Далгата, 24 "А"</div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="contact-line">
                     <div class="icon"><img src="{{ asset('img/icon-phone.png') }}"></div>
-                    <div class="line">Телефон +7 964 257 77 77</div>
+                    <div class="line">Телефон +7 988 293 88 89</div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="contact-line">

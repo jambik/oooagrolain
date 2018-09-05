@@ -49,7 +49,7 @@
                 <div class="col-xs-6" id="top-contacts" style="opacity: 0;">
                     <div class="contacts-text">
                         <div class="line-1">Россия, Республика Дагестан, г. Дербент</div>
-                        <div class="line-2">Телефон: +7 964 257 77 77</div>
+                        <div class="line-2">Телефон: +7 988 293 88 89</div>
                     </div>
                 </div>
             </div>

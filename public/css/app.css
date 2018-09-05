@@ -114,6 +114,8 @@ body { background: url('../img/website-bg.jpg') top center fixed; }
 
 .all-wines { display: block; width: 40%; text-align: center; position: relative; clear: both; margin: 0 auto; background: #558000; color: #fff; font-size: 14pt; text-transform: uppercase; padding: 10px 20px; }
 
+.documents-list img { width: 150px; height: 210px; }
+
 #myBtn {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
