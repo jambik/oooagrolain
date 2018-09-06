@@ -45,8 +45,9 @@ class CommonController extends FrontendController
 
         $messages = [
             'name.required' => 'Введите Ваше имя. Мы же должны как-то к Вам обращаться :)',
-            'email.required_if' => 'А где же ваш email для обратной связи?',
-            'phone.required_if' => 'Укажите пожалуйста Ваш телефончик для обратной связи',
+            'email.required' => 'А где же ваш email для обратной связи?',
+//            'email.required_if' => 'А где же ваш email для обратной связи?',
+//            'phone.required_if' => 'Укажите пожалуйста Ваш телефончик для обратной связи',
             'message.required' => 'А где собственно сообщение?',
         ];
 
