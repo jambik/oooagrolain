@@ -24,7 +24,9 @@
         <div class="col-md-5 feedback-form">
             <div class="form-caption">Напишите нам</div>
             <p>&nbsp;</p>
-            <form>
+            <form action="{{ route('feedback.send') }}" method="POST" id="form_feedback" name="form_feedback">
+                {{ csrf_field() }}
+                <div class="form-status"></div>
                 <div class="form-group">
                     <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя">
                 </div>
@@ -32,10 +34,13 @@
                     <input type="text" name="email" class="form-control" id="email" placeholder="Ваше email">
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" id="message" placeholder="Ваше сообщение"></textarea>
+                    <textarea class="form-control" name="message" id="message" placeholder="Ваше сообщение"></textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-block btn-lg">Отправить сообщение</button>
+                    <div class="g-recaptcha" data-sitekey="6LfEsy4UAAAAACP0hDiXf0R9PP1KKh8kB-tL3Zn2"></div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-block btn-lg btn-info form-button">Отправить сообщение</button>
                 </div>
             </form>
         </div>

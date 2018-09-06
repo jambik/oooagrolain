@@ -55,7 +55,7 @@ body { background: url('../img/website-bg.jpg') top center fixed; }
 .block-about .button a { text-transform: uppercase; padding: 10px 40px; background-color: #a3621b; color: #fff; }
 .block-about .button a:hover { color: #fff; }
 
-.product-block { margin: 0 0 100px 0; min-height: 300px; }
+.product-block { margin: 0 0 100px 0; min-height: 320px; }
 .product-block .img { float: left; width: 150px; }
 .product-block .description { float: left; width: 60%; }
 .product-block .name { font-family: Georgia, "Times New Roman", Times, serif; font-size: 20pt; color: #000; }
@@ -90,8 +90,6 @@ body { background: url('../img/website-bg.jpg') top center fixed; }
 .feedback-form {}
 .feedback-form .form-caption { font-size: 24pt; text-align: center; text-transform: uppercase; }
 .feedback-form textarea { height: 150px; }
-.feedback-form button { text-transform: uppercase; padding: 10px 40px; background-color: #a3621b; color: #fff; }
-.feedback-form button:hover { color: #fff; }
 .bottom-menu { list-style: none; padding: 0; margin: 0; }
 .bottom-menu li { display: inline-block; width: 40%; margin: 0 0 20px; }
 .bottom-menu a { text-transform: uppercase; color: #000; text-decoration: underline; }

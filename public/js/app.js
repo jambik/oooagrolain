@@ -1,5 +1,11 @@
 $(document).ready(function() {
 
+    if ($('#form_feedback').length) {
+        $('#form_feedback').on('submit', function(e){
+            ajaxFormSubmit(e, feedbackSuccess);
+        });
+    }
+
     // Carousel
     $("#carousel").owlCarousel({
         loop: true,
@@ -40,32 +46,6 @@ $(document).ready(function() {
 
     // Owner
     $('#owner-photo').waypoint(function() { $(this.element).animate({opacity: 1}, 500).addClass("animated fadeIn")}, { offset: '80%' });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    if ($('#form_callback').length) {
-        $('#form_callback').on('submit', function(e){
-            ajaxFormSubmit(e, callbackSuccess);
-        })
-    }
 
     if ($('.popup-gallery').length) {
         $('.popup-gallery').magnificPopup({
@@ -171,9 +151,9 @@ function ajaxFormSubmit(e, successFunction)
     });
 }
 
-function callbackSuccess(data)
+function feedbackSuccess(data)
 {
-    $('#callbackModal').modal('hide');
+    $("#form_feedback")[0].reset();
     showNoty(data.message, 'success');
 }
 
