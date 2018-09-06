@@ -88,5 +88,5 @@
 @yield('footer_scripts')
 
 </body>
-<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src='https://www.google.com/recaptcha/api.js?hl=ru'></script>
 </html>
