@@ -38,8 +38,9 @@ class CommonController extends FrontendController
     {
         $rules = [
             'name' => 'required',
-            'email' => 'required_if:phone,""',
-            'phone' => 'required_if:email,""',
+            'email' => 'required',
+//            'email' => 'required_if:phone,""',
+//            'phone' => 'required_if:email,""',
             'message' => 'required',
         ];
 
