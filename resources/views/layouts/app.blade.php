@@ -29,6 +29,7 @@
     <!-- Scripts -->
     <script src="{{ asset('/js/app.bundle.js') }}" type="text/javascript"></script>
     <script src="{{ asset('/js/app.js') }}" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
 
     @yield('header_scripts')
@@ -97,6 +98,32 @@
 @include('partials._metrika')
 
 @yield('footer_scripts')
+
+<div class="modal fade" id="ageverifyModal" tabindex="-1" role="dialog" aria-labelledby="ageverifyLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="ageverifyLabel">Подтвердите свое совершеннолетие</h4>
+            </div>
+            <div class="modal-body">
+                <button type="button" class="btn btn-lg btn-danger" onclick="window.location = 'https://yandex.ru'">Мне меньше 18 лет</button>
+                <button type="submit" class="btn btn-lg btn-primary" onclick="Cookies.set('validated', true, { expires: 30 });" data-dismiss="modal">Мне уже есть 18 лет</button>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        if (Cookies.get('validated') == undefined || Cookies.get('validated') == false) {
+            $('#ageverifyModal').modal({backdrop: 'static'});
+        }
+        console.log(Cookies.get('validated'));
+    });
+</script>
 
 </body>
 <script src='https://www.google.com/recaptcha/api.js?hl=ru'></script>
